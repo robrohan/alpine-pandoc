@@ -1,2 +1,2 @@
 all:
-	docker build .
+	docker build . -t pandoc

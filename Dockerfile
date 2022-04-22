@@ -15,6 +15,7 @@ ENV PERSISTENT_DEPS \
     python3 \
     py3-pip \
     sed \
+    texlive-xetex \
     ttf-droid \
     ttf-droid-nonlatin
 

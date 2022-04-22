@@ -1,2 +1,2 @@
 all:
-	docker build . -t pandoc
+	docker build . -t robrohan/pandoc

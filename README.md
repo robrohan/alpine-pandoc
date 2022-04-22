@@ -1,17 +1,7 @@
 # alpine-pandoc
 
-![MicroBadger Size (tag)](https://img.shields.io/microbadger/image-size/skyzyx/alpine-pandoc/1.2.0?style=for-the-badge)
-![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/skyzyx/alpine-pandoc/1.2.0?style=for-the-badge)
-![Docker Pulls](https://img.shields.io/docker/pulls/skyzyx/alpine-pandoc?style=for-the-badge)
-![Docker Stars](https://img.shields.io/docker/stars/skyzyx/alpine-pandoc?style=for-the-badge)
-
-This is the source code which builds a Docker container comprised of Alpine Linux, [Pandoc], and [PlantUML].
+This is the source code which builds a Docker container comprised of Alpine Linux, and [Pandoc].
 It is intended to provide an environment which is optimized for generating documentation.
-
-We use:
-
-* [Pandoc] (Haskell) to convert [Markdown] into HTML, [reStructuredText] or PDF.
-* [PlantUML] (Java) to convert UML diagrams to SVG or PNG images.
 
 ## Building the Container
 

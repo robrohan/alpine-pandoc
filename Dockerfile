@@ -23,7 +23,7 @@ ENV PANDOC_VERSION 2.18
 ENV PANDOC_DOWNLOAD_URL https://hackage.haskell.org/package/pandoc-$PANDOC_VERSION/pandoc-$PANDOC_VERSION.tar.gz
 ENV PANDOC_ROOT /usr/local/pandoc
 
-ENV PATH $PATH:$PANDOC_ROOT/bin
+ENV PATH $PATH:$PANDOC_ROOT/bin:/root/.cabal/bin/
 
 # Install/Build Packages
 RUN apk upgrade --update && \
@@ -49,6 +49,6 @@ RUN apk upgrade --update && \
 # USER pandoc
 
 # Reset the work dir
-WORKDIR /root/
+WORKDIR /root/workspace
 
-ENTRYPOINT [ "/root/.cabal/bin/pandoc" ]
+ENTRYPOINT [ "pandoc" ]

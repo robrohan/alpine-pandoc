@@ -1,0 +1,24 @@
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+ENV PERSISTENT_DEPS \
+	wget \
+    ghc \
+    texlive-xetex \
+    graphviz \
+    python3 \
+    sed
+
+USER root
+RUN apt-get update && \
+	apt-get install -y tzdata && \
+	apt-get install -y $PERSISTENT_DEPS
+
+RUN wget https://github.com/jgm/pandoc/releases/download/2.18/pandoc-2.18-1-amd64.deb && \
+	dpkg -i pandoc-2.18-1-amd64.deb
+
+# Reset the work dir
+WORKDIR /root/workspace
+
+ENTRYPOINT [ "pandoc" ]

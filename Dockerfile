@@ -8,6 +8,7 @@ ENV BUILD_DEPS \
     libffi-dev \
     musl-dev \
     zlib-dev
+
 ENV PERSISTENT_DEPS \
     gmp \
     graphviz \
@@ -21,7 +22,8 @@ ENV PERSISTENT_DEPS \
 
 ENV PANDOC_VERSION 2.18
 ENV PANDOC_DOWNLOAD_URL https://hackage.haskell.org/package/pandoc-$PANDOC_VERSION/pandoc-$PANDOC_VERSION.tar.gz
-ENV PANDOC_ROOT /usr/local/pandoc
+# /usr/local/pandoc
+ENV PANDOC_ROOT /root/.cabal/bin/
 
 ENV PATH $PATH:$PANDOC_ROOT/bin:/root/.cabal/bin/
 
@@ -51,4 +53,4 @@ RUN apk upgrade --update && \
 # Reset the work dir
 WORKDIR /root/workspace
 
-ENTRYPOINT [ "pandoc" ]
+ENTRYPOINT [ "/root/.cabal/bin/pandoc" ]
